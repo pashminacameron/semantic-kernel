@@ -57,6 +57,18 @@ class MemoryRecord:
     def embedding(self) -> ndarray:
         return self._embedding
 
+    @property
+    def key(self) -> str:
+        return self._key
+    
+    @property
+    def id(self) -> str:
+        return self._id
+    
+    @property
+    def text(self) -> str:
+        return self._text
+
     @staticmethod
     def reference_record(
         external_id: str,
