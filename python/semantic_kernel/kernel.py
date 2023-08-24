@@ -112,6 +112,14 @@ class Kernel:
     @property
     def skills(self) -> ReadOnlySkillCollectionBase:
         return self._skill_collection.read_only_skill_collection
+    
+    @property
+    def native_skills(self) -> ReadOnlySkillCollectionBase:
+        return self._skill_collection.get_functions_view().native_functions
+
+    @property
+    def semantic_skills(self) -> ReadOnlySkillCollectionBase:
+        return self._skill_collection.get_functions_view().semantic_functions
 
     def register_semantic_function(
         self,
